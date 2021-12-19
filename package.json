@@ -1,0 +1,24 @@
+{
+  "scripts": {
+    "dev": "node helloWorld.js"
+  },
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "dotenv": "10.0.0"
+  },
+  "name": "religie",
+  "description": "The back-end part of [religie](https://github.com/ratasorin/religie)",
+  "version": "1.0.0",
+  "main": "helloWorld.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpearsAndEagles/religie_BackEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpearsAndEagles/religie_BackEnd/issues"
+  },
+  "homepage": "https://github.com/SpearsAndEagles/religie_BackEnd#readme"
+}

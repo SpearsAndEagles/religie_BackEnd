@@ -1,12 +1,21 @@
 const http = require("http");
-const port = process.env.PORT || 3000;
+require("dotenv").config();
+try {
+  if (Number(process.env.PORT) <= 0 || isNaN(Number(process.env.PORT))) {
+    throw "ma-ta";
+  }
+  const port = Number(process.env.PORT);
+  const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    const msg = "Hello Node!\n";
+    res.end(msg);
+  });
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  const msg = "Hello Node!\n";
-  res.end(msg);
-});
-
-server.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}/`);
-});
+  server.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}/`);
+  });
+} catch (e) {
+  console.log(
+    'Missing environment variable for port. Check "config.env". Terminating process'
+  );
+}
